@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import Question from "../../models/Question"; // Make sure to adjust the import path if different
+import Question from "../../models/forumModel/Question"; // Make sure to adjust the import path if different
 
 const router = Router();
 

@@ -7,7 +7,10 @@ import rateLimit from "express-rate-limit";
 import basicRoutes from "./routes/basicRoutes";
 import testRoutes from "./routes/testRoutes";
 import responseCodeRoutes from "./routes/responseCodeRoutes";
+import crudRoutes from "./routes/crudRoutes";
 import forumRoutes from "./routes/forumRoutes";
+
+// Below code is for rate limiter
 
 // const apiLimiter = rateLimit({
 //   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -38,6 +41,7 @@ app.use(bodyParser.json());
 app.use("/basic", basicRoutes);
 app.use("/responseCode", responseCodeRoutes);
 app.use("/test", testRoutes);
+app.use("/crud", crudRoutes);
 app.use("/forum", forumRoutes);
 
 // Below code is for basic api
