@@ -1,0 +1,23 @@
+What is an API?
+An API (Application Programming Interface) is like a waiter in a restaurant. 
+The waiter takes your order (request), tells the kitchen what you want, and 
+brings the food (response) back to your table. Just like this, an API allows 
+different parts of software to communicate and exchange information.
+
+What is Express.js?
+Imagine Express.js as the manager of a restaurant who organizes everything 
+smoothly. It helps to set up the restaurant (your server), manage waiters 
+(your routes), handle orders (requests), and make sure that the right food 
+(responses) gets to the right table (client). Express.js is like the backbone 
+that makes sure everything runs smoothly without you having to worry about the 
+details.
+
+Core Components:
+- Request (req): Think of this as the customer's order slip with all the 
+  details of what they want.
+- Response (res): This is like the dish prepared in the kitchen, ready to be 
+  served to the customer.
+- NextFunction (next): Imagine a situation where the waiter hands off the order 
+  to the kitchen; sometimes the waiter needs help from another waiter to 
+  complete the task. The "next" function is used to pass control to the next 
+  step in the process, like calling another waiter for help.

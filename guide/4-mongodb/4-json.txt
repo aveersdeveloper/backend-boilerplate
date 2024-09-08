@@ -1,0 +1,18 @@
+Understanding JSON:
+JSON (JavaScript Object Notation) is like a universal language for data, similar to how people from different 
+countries might all understand basic symbols or pictures. It’s used to structure data in a way that is easy to 
+read and write by both humans and machines.
+
+JSON Example:
+Imagine a simple menu:
+{
+  "dish": "Pizza",
+  "ingredients": ["cheese", "tomato", "basil"],
+  "price": 12.99
+}
+
+This structure is clear and flexible, showing what the item is, what it includes, and its cost, making it easy 
+to understand at a glance.
+
+JSON is used everywhere in web development because it’s straightforward and can easily be passed between servers 
+and web applications, allowing for smooth communication and data exchange.

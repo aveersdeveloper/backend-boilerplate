@@ -1,0 +1,20 @@
+Overview of MongoDB Introduction:
+This section will introduce you to MongoDB, a popular NoSQL database used in modern web applications. 
+You will learn about what MongoDB is, the difference between NoSQL and SQL, and the role of data formats 
+like JSON and BSON in storing and retrieving data. This foundational knowledge will set the stage for 
+connecting your Node.js applications to a MongoDB database.
+
+You will learn about:
+1. What MongoDB is and why it’s widely used in web development.
+2. The concept of NoSQL databases and how they compare to traditional SQL databases.
+3. Understanding JSON, a common data format used in APIs and web applications.
+4. Introduction to BSON, the binary-encoded format used by MongoDB for efficient data storage.
+
+File Sequence:
+1. introduction.txt - Learn what MongoDB is through analogies and understand its role in database management.
+2. noSQL_vs_SQL.txt - Explore the concept of NoSQL databases and compare them with traditional SQL databases.
+3. json.txt - Understand JSON, its structure, and why it's commonly used in data exchange.
+4. bson.txt - Learn about BSON, the data format used by MongoDB, and how it differs from JSON.
+
+Start with the first file to understand the basic concepts of MongoDB, then move through each file to 
+gain a comprehensive understanding of the technologies and data formats involved.

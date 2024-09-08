@@ -1,0 +1,18 @@
+Overview of Rate Limiting:
+This section will introduce rate limiting and guide you through implementing it in your Node.js application 
+using the `express-rate-limit` middleware. Rate limiting helps protect your server from excessive requests 
+by limiting the number of requests a client can make within a certain time frame.
+
+You will learn about:
+1. What rate limiting is and why it’s important in web applications.
+2. An introduction to `express-rate-limit`, a popular middleware for implementing rate limiting in Express.js.
+3. How to apply rate limiting to your entire server to enhance security and ensure fair usage.
+
+File Sequence:
+1. introduction.txt - Learn what rate limiting is through analogies and understand its purpose in protecting 
+   your application.
+2. rateLimiterImplementation.txt - Explore the implementation of rate limiting using the `express-rate-limit` 
+   middleware with a detailed explanation of the code.
+
+Start with the introduction to understand the concept of rate limiting, then move on to the implementation guide 
+to set up rate limiting in your application.

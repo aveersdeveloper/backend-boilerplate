@@ -1,0 +1,26 @@
+Introduction to Rate Limiting:
+Rate limiting is like a traffic signal at a busy intersection. Just like a traffic signal controls the flow 
+of vehicles to ensure everyone moves safely and efficiently, rate limiting manages the flow of requests to 
+your server to prevent it from becoming overloaded.
+
+Why Use Rate Limiting?
+Imagine a busy road without traffic signals—vehicles would move chaotically, leading to traffic jams and accidents. 
+Similarly, if a server receives too many requests at once, it can become overwhelmed, slowing down or even crashing. 
+Rate limiting helps manage this by controlling the number of requests a user can make within a specific time frame, 
+ensuring smooth and fair usage for all.
+
+Rate limiting is essential for:
+- **Preventing Abuse**: It protects your server from being overwhelmed by excessive requests, whether intentional 
+  (DDoS attacks) or accidental.
+- **Ensuring Fair Usage**: By limiting the number of requests per user, it ensures that all users get fair access 
+  to the server’s resources.
+- **Enhancing Security**: Rate limiting can help mitigate brute force attacks by limiting repeated attempts 
+  within a short time.
+
+Using `express-rate-limit`:
+`express-rate-limit` is a popular middleware for implementing rate limiting in Express.js applications. It allows 
+you to define rules for request limits, such as how many requests are allowed per IP address and the time window 
+for these requests.
+
+In the next section, you will see how to use `express-rate-limit` to set up rate limiting in your server, protecting 
+it from excessive traffic and ensuring fair usage for all users.

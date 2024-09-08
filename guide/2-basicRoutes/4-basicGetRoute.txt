@@ -1,0 +1,19 @@
+Creating a Basic GET Route:
+A GET route is like a customer asking for the menu: "Show me what you have!". 
+The server responds by handing over the information, just like showing a menu 
+to a customer in a restaurant.
+
+Purpose of a GET Route:
+GET routes are used when you want to fetch or retrieve data from the server 
+without making any changes. Think of it as simply asking to see what's available.
+
+Code Example:
+-----------------------------------
+router.get("/", (req, res) => {
+  res.send("Hello World!"); 
+  // This is like handing the customer a menu that says, "Here's what we have!"
+});
+-----------------------------------
+
+In this simple example, the customer (client) asks to see the menu, and we respond 
+with a basic greeting.

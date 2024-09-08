@@ -1,0 +1,27 @@
+Understanding Middleware:
+Middleware functions are like the various checks in a restaurant before the dish 
+reaches the customer. Think of them as quality checks, ensuring that everything 
+is correct before the meal is served. For example, a waiter might double-check 
+the order, another might taste the soup, and another might add final garnishes 
+before it’s sent to the customer.
+
+Common Request Fields:
+- req.method: This is like the type of order being made: Dine-in (GET) or Takeaway (POST).
+- req.url: The path or specific section of the menu being asked for, like Drinks or Main Course.
+- req.ip: The table number or location of the customer making the request.
+- req.headers['user-agent']: Details about the customer, like whether they are a regular or a first-time visitor.
+
+Code Example for Middleware:
+-----------------------------------
+const requestLog = (req, res, next) => {
+  console.log(`${req.method} request for '${req.url}'`); 
+  // This is the waiter noting down the order details.
+
+  next(); 
+  // Passes the control to the next stage, like sending the order to the kitchen.
+};
+-----------------------------------
+
+Inline vs. External Middleware:
+Inline middleware is like adding spices directly at the table, while external 
+middleware is prepared separately in the kitchen and added to the dish.

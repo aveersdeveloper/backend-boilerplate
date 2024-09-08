@@ -1,0 +1,22 @@
+Overview of Forum Application Development:
+This section will guide you through the development of a forum application using Node.js, Express.js, and Mongoose. 
+You will learn how to set up models for questions and answers, and implement routes to handle forum functionalities 
+such as creating questions, adding answers, and performing CRUD operations.
+
+You will learn about:
+1. Introduction to the forum application and its purpose.
+2. Creating models for questions and answers using Mongoose, including schema definitions and the use of interfaces.
+3. Implementing routes to handle CRUD operations for questions and answers, explained through separate route files.
+
+File Sequence:
+1. introduction.txt - Get an overview of the forum application and its functionalities.
+2. forumModel.txt - Learn how to create models for questions and answers using Mongoose, and understand why interfaces 
+   are used in this model.
+3. createQuestionRoute.txt - Explore how to implement the route to create a new question.
+4. getQuestionsRoute.txt - Learn how to set up routes to retrieve all questions or a specific question.
+5. updateQuestionRoute.txt - Understand the implementation of updating an existing question.
+6. deleteQuestionRoute.txt - See how to handle the deletion of questions.
+7. answerRoutes.txt - Discover the routes for adding, updating, and deleting answers within questions.
+
+Start with the introduction to get an overview of the forum application, then proceed to the model setup and individual 
+route implementations for a comprehensive understanding of the forum's functionalities.

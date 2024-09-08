@@ -1,0 +1,29 @@
+Creating a New Question Route:
+The create question route allows users to post new questions to the forum. This route handles incoming data, 
+validates it, and saves it to the database using the Question model.
+
+Code Example:
+-----------------------------------
+import { Router, Request, Response } from "express";
+import Question from "../../models/forumModel/Question";
+
+const router = Router();
+
+// Create a new question
+router.post("/questions", async (req: Request, res: Response) => {
+  try {
+    const { question, description, questionAuthor } = req.body;
+    const newQuestion = new Question({ question, description, questionAuthor });
+    await newQuestion.save();
+    res.status(201).json(newQuestion);
+  } catch (error) {
+    res.status(500).json({ error: "Error creating question", details: error });
+  }
+});
+
+export default router;
+-----------------------------------
+
+Explanation:
+- **POST /questions**: This endpoint allows users to create new questions by sending data such as question text, 
+  description, and author. The data is validated and saved to the database.

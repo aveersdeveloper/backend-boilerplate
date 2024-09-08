@@ -1,0 +1,89 @@
+Managing Answers in Questions:
+These routes handle adding, updating, and deleting answers within a specific question, enhancing the interactive 
+nature of the forum.
+
+Code Example:
+-----------------------------------
+import { Router, Request, Response } from "express";
+import Question from "../../models/forumModel/Question";
+
+const router = Router();
+
+// Add an answer to a question
+router.post("/questions/:id/answers", async (req: Request, res: Response) => {
+  try {
+    const { description, answerAuthor } = req.body;
+    const question = await Question.findById(req.params.id);
+    if (!question) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+    question.answers.push({ description, answerAuthor });
+    await question.save();
+    res.status(201).json(question);
+  } catch (error) {
+    res.status(500).json({ error: "Error adding answer", details: error });
+  }
+});
+
+// Update an answer by answer ID
+router.put(
+  "/questions/:questionId/answers/:answerId",
+  async (req: Request, res: Response) => {
+    try {
+      const { questionId, answerId } = req.params;
+      const { description, answerAuthor } = req.body;
+
+      // Use findOneAndUpdate with arrayFilters to update the nested answer
+      const updatedQuestion = await Question.findOneAndUpdate(
+        { _id: questionId, "answers._id": answerId },
+        {
+          $set: {
+            "answers.$.description": description,
+            "answers.$.answerAuthor": answerAuthor,
+          },
+        },
+        { new: true, runValidators: true }
+      );
+
+      if (!updatedQuestion) {
+        return res.status(404).json({ error: "Question or Answer not found" });
+      }
+
+      res.status(200).json(updatedQuestion);
+    } catch (error) {
+      res.status(500).json({ error: "Error updating answer", details: error });
+    }
+  }
+);
+
+// Delete an answer by answer ID
+router.delete(
+  "/questions/:questionId/answers/:answerId",
+  async (req: Request, res: Response) => {
+    try {
+      const { questionId, answerId } = req.params;
+
+      // Use updateOne with $pull to remove the specific answer
+      const updatedQuestion = await Question.findOneAndUpdate(
+        { _id: questionId },
+        { $pull: { answers: { _id: answerId } } },
+        { new: true }
+      );
+
+      if (!updatedQuestion) {
+        return res.status(404).json({ error: "Question or Answer not found" });
+      }
+
+      res.status(200).json(updatedQuestion);
+    } catch (error) {
+      res.status(500).json({ error: "Error deleting answer", details: error });
+    }
+  }
+);
+
+export default router;
+-----------------------------------
+
+Explanation:
+- **Managing Answers**: These routes provide the functionality to add, update, and delete answers within questions, 
+  making the forum interactive and dynamic.

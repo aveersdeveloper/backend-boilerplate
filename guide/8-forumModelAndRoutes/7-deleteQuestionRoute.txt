@@ -1,0 +1,29 @@
+Deleting a Question:
+This route allows users to delete a question from the forum.
+
+Code Example:
+-----------------------------------
+import { Router, Request, Response } from "express";
+import Question from "../../models/forumModel/Question";
+
+const router = Router();
+
+// Delete a question
+router.delete("/questions/:id", async (req: Request, res: Response) => {
+  try {
+    const deletedQuestion = await Question.findByIdAndDelete(req.params.id);
+    if (!deletedQuestion) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+    res.status(200).json({ message: "Question deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Error deleting question", details: error });
+  }
+});
+
+export default router;
+-----------------------------------
+
+Explanation:
+- **DELETE /questions/:id**: Deletes the specified question from the database, providing feedback on the success 
+  or failure of the operation.

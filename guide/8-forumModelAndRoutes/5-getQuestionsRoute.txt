@@ -1,0 +1,40 @@
+Retrieving Questions:
+These routes allow users to retrieve all questions or a specific question by its ID, providing access to the forum’s 
+content.
+
+Code Example:
+-----------------------------------
+import { Router, Request, Response } from "express";
+import Question from "../../models/forumModel/Question";
+
+const router = Router();
+
+// Get all questions
+router.get("/questions", async (req: Request, res: Response) => {
+  try {
+    const questions = await Question.find();
+    res.status(200).json(questions);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching questions", details: error });
+  }
+});
+
+// Get a specific question by ID
+router.get("/questions/:id", async (req: Request, res: Response) => {
+  try {
+    const question = await Question.findById(req.params.id);
+    if (!question) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+    res.status(200).json(question);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching question", details: error });
+  }
+});
+
+export default router;
+-----------------------------------
+
+Explanation:
+- **GET /questions**: Retrieves all questions from the database.
+- **GET /questions/:id**: Retrieves a specific question based on its ID.

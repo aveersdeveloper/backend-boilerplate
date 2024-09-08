@@ -1,0 +1,14 @@
+NoSQL vs. SQL:
+SQL databases are like traditional filing cabinets where every document follows a specific format and order. 
+If you want to store a new type of document, you need to redesign the entire cabinet to fit it in.
+
+NoSQL databases, like MongoDB, are more like a versatile storage room where you can stack boxes of different 
+sizes and shapes. You don't need to reorganize the entire space to add something new, making it easy to adapt 
+to changing requirements.
+
+Comparison:
+- SQL (Structured Query Language) databases are great for structured data, with rows and columns like a 
+  spreadsheet. They are perfect for data that doesn’t change often, like accounting records.
+- NoSQL databases (like MongoDB) handle unstructured or semi-structured data, like customer feedback or 
+  social media posts, without the need for a rigid schema. This makes them ideal for rapidly changing 
+  environments.

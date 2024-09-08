@@ -1,0 +1,27 @@
+Working with Query Parameters:
+Query parameters are like special instructions that a customer adds when ordering, 
+like "extra cheese" or "no onions". These instructions are passed to the kitchen 
+so that the dish (response) can be prepared exactly as requested.
+
+Purpose of Query Parameters:
+Query parameters allow you to send small pieces of data through the URL to customize 
+what you are asking for, like customizing an order at a restaurant.
+
+Code Example:
+-----------------------------------
+router.get("/greet", (req, res) => {
+  const { name } = req.query; 
+  // This is like checking the order slip for special instructions.
+
+  if (!name) {
+    return res.status(400).send("No name provided"); 
+    // This is like saying, "Sorry, I need a name to greet you!"
+  }
+
+  res.send(`Hello, ${name}!`); 
+  // The dish (response) is prepared according to the customer's request.
+});
+-----------------------------------
+
+This example shows how to use query parameters to personalize the response based 
+on what the client asks for.

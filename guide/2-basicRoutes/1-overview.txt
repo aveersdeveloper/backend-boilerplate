@@ -1,0 +1,26 @@
+Overview of Basic Routes:
+This section will guide you through setting up basic API routes using Express.js.
+You will learn about:
+1. What APIs are and why they are essential.
+2. Introduction to Express.js, routers, and core components like Request, 
+   Response, and NextFunction.
+3. How to set up and initialize a router in Express.
+4. Creating a simple GET route to understand the basics of handling API requests.
+5. Working with query parameters to pass data to your routes.
+6. Understanding middleware, its purpose, and how to apply it in different ways.
+
+File Sequence:
+1. introduction.txt - Learn what APIs are and get introduced to Express.js and 
+   its basic components.
+2. routerSetup.txt - Set up your Express router and understand its role in 
+   managing routes.
+3. basicGetRoute.txt - Create a simple GET route to understand how API endpoints 
+   work.
+4. queryParameters.txt - Learn how to use query parameters to pass data to your 
+   API routes.
+5. middlewareExplanation.txt - Dive into middleware, including common request 
+   fields and inline vs. external usage.
+
+Start with the first file and work your way through each one in order. Each file 
+contains explanations and examples to help you grasp the core concepts of basic 
+routing in Express.js.

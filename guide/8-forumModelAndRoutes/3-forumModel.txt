@@ -1,0 +1,59 @@
+Creating Models for the Forum Application:
+In the forum application, models are used to define the structure of questions and answers. Unlike simpler models, 
+here we use interfaces to provide type definitions, which enhance the organization and readability of the code.
+
+Why Use Interfaces in This Model?
+Interfaces help define the structure of more complex data, particularly when working with nested documents. 
+By using interfaces, you ensure that each part of the model adheres to a specific format, reducing errors and 
+improving code maintainability. Interfaces also enable TypeScript to enforce types, providing clear guidance on 
+what data is expected.
+
+Code Example:
+-----------------------------------
+import { Schema, model, Document } from "mongoose";
+
+// Interface representing the answer object
+interface Answer {
+  description: string;
+  answerAuthor: string;
+}
+
+// Interface representing the Question document
+interface QuestionDocument extends Document {
+  question: string;
+  description: string;
+  questionAuthor: string;
+  answers: Answer[];
+}
+
+// Answer Schema
+const AnswerSchema = new Schema<Answer>(
+  {
+    description: { type: String, required: true },
+    answerAuthor: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
+// Question Schema
+const QuestionSchema = new Schema<QuestionDocument>(
+  {
+    question: { type: String, required: true },
+    description: { type: String, required: true },
+    questionAuthor: { type: String, required: true },
+    answers: { type: [AnswerSchema], default: [] },
+  },
+  { timestamps: true }
+);
+
+export default model<QuestionDocument>("Question", QuestionSchema);
+-----------------------------------
+
+Explanation:
+- **Question Schema**: Defines the structure of a question, including fields for the question text, description, 
+  author, and an array of answers. This setup allows each question to store multiple answers directly.
+- **Answer Schema**: Embedded within the question, the answer schema defines the structure of an answer, including 
+  fields for the description and the author.
+
+Using interfaces in this setup helps ensure that each document adheres to the expected format, making the code 
+clearer and easier to maintain.

@@ -1,0 +1,19 @@
+Introduction to the Forum Application:
+The forum application is designed to facilitate user interaction through questions and answers. Users can create 
+questions, view others’ questions, and provide answers. This application mimics a simple discussion board or 
+community forum, making it a great example for learning how to implement CRUD operations with nested documents 
+using Node.js, Express.js, and Mongoose.
+
+Why Use Mongoose?
+Mongoose helps structure and manage data in MongoDB, providing schemas and models that ensure data consistency. 
+It simplifies database interactions, allowing developers to define clear data structures and leverage built-in 
+validation and error handling.
+
+The Role of Interfaces:
+In the basic CRUD model, we didn’t use interfaces because the data structure was straightforward and could be managed 
+with basic schemas. However, in the forum application, interfaces are used to provide type definitions, enhancing 
+code clarity and type safety. Interfaces help define the structure of documents, especially when dealing with nested 
+objects like answers within questions.
+
+In the next sections, you will learn how to create the models for questions and answers, and how interfaces help 
+organize and manage complex data structures in Mongoose.

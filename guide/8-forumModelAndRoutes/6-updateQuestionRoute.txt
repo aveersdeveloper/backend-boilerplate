@@ -1,0 +1,34 @@
+Updating a Question:
+This route allows users to update an existing question. The data is validated before updating to ensure consistency.
+
+Code Example:
+-----------------------------------
+import { Router, Request, Response } from "express";
+import Question from "../../models/forumModel/Question";
+
+const router = Router();
+
+// Update a question
+router.put("/questions/:id", async (req: Request, res: Response) => {
+  try {
+    const { question, description, questionAuthor } = req.body;
+    const updatedQuestion = await Question.findByIdAndUpdate(
+      req.params.id,
+      { question, description, questionAuthor },
+      { new: true, runValidators: true }
+    );
+    if (!updatedQuestion) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+    res.status(200).json(updatedQuestion);
+  } catch (error) {
+    res.status(500).json({ error: "Error updating question", details: error });
+  }
+});
+
+export default router;
+-----------------------------------
+
+Explanation:
+- **PUT /questions/:id**: Updates an existing question based on the provided ID, ensuring the question data is valid 
+  before updating the database.

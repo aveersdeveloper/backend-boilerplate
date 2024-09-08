@@ -1,0 +1,25 @@
+Introduction to Response Codes:
+Response codes are like the feedback you get from a restaurant when you place an order. 
+Just like the kitchen lets the waiter know if your dish is ready, unavailable, or if 
+there's a problem, response codes tell clients the outcome of their requests.
+
+Why Are Response Codes Important?
+Imagine ordering a dish, but instead of the waiter telling you if it's being prepared, 
+unavailable, or if there’s a delay, you’re left guessing. Response codes help avoid this 
+confusion by clearly communicating the status of every request.
+
+Common Response Codes Explained:
+- 200 OK: This is like the waiter bringing your food to the table with a smile, indicating 
+  everything went well and your order was successful.
+  
+- 404 Not Found: Imagine asking for a dish that’s not on the menu. The waiter responds with 
+  "Sorry, we don't have that." A 404 tells you the server couldn't find what you asked for.
+
+- 401 Unauthorized: This is like trying to enter a VIP area without the right credentials. 
+  The bouncer stops you and says, "You can't enter without permission." A 401 means you need 
+  proper authorization to access the resource.
+
+Using Response Codes in APIs:
+Response codes ensure that communication between the server (kitchen) and the client 
+(customer) is clear and concise. They help developers understand what's happening with 
+their requests and guide users on what to do next.

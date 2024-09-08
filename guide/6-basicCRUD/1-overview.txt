@@ -1,0 +1,19 @@
+Overview of Simple CRUD Operations:
+This section will guide you through setting up basic CRUD (Create, Read, Update, Delete) operations in your 
+Node.js application using Mongoose and Express.js. You will learn how to create models using Mongoose and 
+implement CRUD routes using HTTP methods like POST, GET, PUT, and DELETE.
+
+You will learn about:
+1. What Mongoose is and why it is commonly used in Node.js applications to interact with MongoDB.
+2. How to create a simple Mongoose model with basic fields to structure your data.
+3. Implementing CRUD routes using Express.js to create, read, update, and delete data in your application.
+
+File Sequence:
+1. introduction.txt - Learn what Mongoose is through analogies and understand its role in connecting your application 
+   to MongoDB.
+2. modelCreation.txt - Learn how to create a Mongoose model with basic fields and understand the role of models 
+   in managing data.
+3. crudRoutes.txt - Explore how to set up routes for CRUD operations using Mongoose models in Express.js.
+
+Start with the first file to understand what Mongoose is and why it's used, then move on to creating models and 
+setting up CRUD routes.
